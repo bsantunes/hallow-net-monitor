@@ -1,0 +1,14 @@
+[Unit]
+Description=Streamlit Network Monitor Dashboard
+After=network.target
+
+[Service]
+User=idwave
+WorkingDirectory=/home/idwave/
+# Point to the python executable INSIDE your venv
+ExecStart=/home/idwave/venv/bin/streamlit run monitor_app.py --server.port 8501 --server.address 10.130.32.1
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
