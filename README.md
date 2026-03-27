@@ -1,5 +1,7 @@
 # Network Fleet Monitor 📡
 
+![System Architecture](docs/infographic.png)
+
 A lightweight monitoring system for intermittent wireless connections.
 
 ## Architecture
@@ -17,7 +19,7 @@ A lightweight monitoring system for intermittent wireless connections.
 
 ### 2. Remote Host Setup
 - **Syncing:** Add this to the remote host crontab to pull data from the local device (10.20.20.2):
-  `* * * * * rsync -avz --append-verify pi@10.20.20.2:/home/pi/monitor_hallow_results.log /home/idwave/monitor_hallow_results.log`
+- `* * * * * rsync -avz --append-verify pi@10.20.20.2:/home/pi/monitor_hallow_results.log /home/idwave/monitor_hallow_results.log`
 
 - **Dashboard:**
   ```bash
@@ -26,7 +28,7 @@ A lightweight monitoring system for intermittent wireless connections.
   source venv/bin/activate
   pip install -r requirements.txt
 
-### 3. Persistence:
+### 3. Run streamlit as systemd service:
  
 - Copy streamlit_monitor.service to /etc/systemd/system/, reload daemon, and start the service.
 - `sudo systemctl daemon-reload`
@@ -34,13 +36,3 @@ A lightweight monitoring system for intermittent wireless connections.
 - `sudo systemctl start streamlit_monitor.service`
 - `sudo systemctl status streamlit_monitor.service`
 
-### 4. Initialize the Repo
-Run these commands on your development machine (or the remote host) to create the git project:
-
-```bash
-mkdir network-fleet-monitor
-cd network-fleet-monitor
-git init
-# (Create the files listed above)
-git add .
-git commit -m "Initial commit: Multi-device monitoring with Streamlit dashboard"
