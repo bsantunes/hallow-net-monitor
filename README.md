@@ -1,6 +1,6 @@
 # Network Fleet Monitor 📡
 
-![System Architecture](diagrama.png)
+![System Architecture](diagram.png)
 
 A lightweight monitoring system for intermittent wireless connections.
 
