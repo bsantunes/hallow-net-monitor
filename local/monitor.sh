@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # --- Configuration ---
-DEVICE_ID="rpi-728"
+DEVICE_ID="rpi-*"
 LEASES_FILE="/var/lib/misc/dnsmasq.leases"
 LOCAL_LOG="/home/pi/monitor_hallow_results.log"
 
